@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+contaner {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background: linear-gradient(rgb(50, 150, 150), rgb(50, 60, 150));
+    font-family: sans-serif;
+    color: white;
+    
+}
+
+.contaner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(48, 48, 48, 0.8);
+    height: 40vh;
+    min-height: 250px;
+    width: 35%;
+    min-width: 250px;
+    border-radius: 3.5%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.4);
+}
+
+.location, 
+.temperature {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.degree-section {
+    display: flex;
+    align-items: center;
+}
+
+.degree-section span {
+    margin: 8px;
+    font-size: 25px;
+}
+
+.degree-section h2 {
+    font-size: 40px;
+}

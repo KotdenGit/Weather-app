@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAPv/
+        AACi/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAgAAACAAIQASAAIAAhAAAAABIAABAAIiIAAQAAACIRESIAA
+        CIAIREREgAiAQIRERERIBAAAhEREREgAAACERERESAAAQIRERERIBAiACERERIAIgAAIhERIgAAABAAIiIAAQAAIQAAAAASAAIAAhABIAAgAAACAAAgAAD73wAAuZ0AAM/
+        zAADcOwAA8A8AADAMAACgBQAA4AcAAOAHAACgBQAAMAwAAPAPAADcOwAAz/MAALmdAAD73wAA" rel="icon" type="image/x-icon" />
+        <link rel="stylesheet" href="./style.css" />
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+        <title>Weather app</title>
+    </head>
+    <body>
+        <contaner>
+            <div class="contaner">
+                <div class="location">
+                    <h1 class="location-timezone">Timezone</h1>
+                    
+                </div>
+
+                <div class="temperature">
+                    <div class="degree-section">
+                        <h2 class="temperature-degree">0</h2>
+                        <span>°C</span>
+                    </div>  
+                    <canvas class="icon" width="128" height="128"></canvas>
+                    <div class="temperature-description">Cold</div>
+                </div>
+            </div>
+            <div id='map' style='width: 300px; height: 300px;'></div>
+           
+        </contaner>
+
+        
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+        
+        <script src="skycons.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
