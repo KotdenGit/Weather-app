@@ -13,24 +13,27 @@
         <title>Weather app</title>
     </head>
     <body>
-        <contaner>
+        <contaner id="mean">
             
             <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
                 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+                
               
                 <div class="navbar-collapse" id="navbarColor01">
                   <ul class="navbar-nav mr-auto">
+                    <a class="navbar-brand" href="#">Weather</a>
                     <li class="nav-item active">
                       <a class="nav-link" href="#">°C</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">°F</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">&#9850;</a>
+                    </li>
+                    <a class="nav-link" id="getPic" href="#">EN</a>
                   </ul>
-                  <a class="navbar-brand" href="#">Weather</a>
+                  
                   <form class="form-inline my-3 my-lg-2 col-xs-6 col-md-6">
                     <input class="form-control mr-sm-2 col-xs-8 col-md-8" type="text" placeholder="Search">
                     <button class="btn btn-secondary my-2 my-sm-2" type="submit">Search</button>
@@ -42,7 +45,7 @@
             
             <div class="weather-box">
                 
-                <div class="contaner">
+                <div class="inner contaner">
                     <div class="location">
                       <h1 class="location-timezone">Timezone</h1>
                     
@@ -52,7 +55,7 @@
                      <p class="time">//</p>
                         <div class="degree-section">
                             <h2 class="temperature-degree">0</h2>
-                            <span>°C</span>
+                            
                         </div>  
                         <canvas class="icon" width="128" height="128"></canvas>
                         <div class="temperature-description">Cold</div>
@@ -73,8 +76,8 @@
 
                 <div class="map">
                     <div id='map' style='width: 300px; height: 300px;'></div>
-                    <p>longitude<span class="longitude">35.02</span></p>
-                    <p>latitude<span class="latitude">52.04</span></p>
+                    <p class="inner">longitude<span class="longitude inner">35.02</span></p>
+                    <p class="inner">latitude<span class="latitude inner">52.04</span></p>
                 </div>
             </div>
         </contaner>

@@ -5,13 +5,18 @@
 }
 
 contaner {
-    min-height: 100vh;
+    height: 100vh;
+    /* eight: fit-content; */
     display: flex;
     justify-content: space-evenly;
     
     flex-direction: column;
     
-    background: linear-gradient(rgb(50, 150, 150), rgb(50, 60, 150));
+    /*background: linear-gradient(rgb(50, 150, 150), rgb(50, 60, 150));*/
+    background-color: rgba(83, 88, 95, 0.6);
+    background-image: url('./assets/artphoto.jpg');
+    background-size: cover;
+    background-blend-mode: multiply; 
     font-family: sans-serif;
     color: white;
     
@@ -50,9 +55,9 @@ contaner {
     flex-direction: row;
 }
 
-.longitude,
-.latitude {
+.inner {
     margin: 0.5rem;
+    text-shadow:2px 2px 4px rgba(0,0,0,1);
 }
 
 .location, 
@@ -83,6 +88,6 @@ contaner {
 
 li {
     background-color: rgba(83, 88, 95, 0.7);
-background-image: url('../assets/img/background.jpg');
-background-blend-mode: multiply; 
+    background-image: url('../assets/artphoto.jpg');
+    background-blend-mode: multiply; 
 }
