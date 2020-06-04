@@ -16,6 +16,7 @@ window.addEventListener("load", () => {
     "11d", "WIND", "11n", "WIND", "50d", "FOG", "50n", "FOG", ];
     const longitudePoint = document.querySelector('.longitude');
     const latitudePoint = document.querySelector('.latitude');
+    const chengeBackground = document.getElementById("getPic");
     
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -94,9 +95,8 @@ window.addEventListener("load", () => {
                 }
             });
     }
-
-    //chengePicture();
-    function chengePicture() {
+   
+    chengeBackground.onclick = function chengePicture() {
         const api = `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=${accesKey}`;
         fetch(api)
             .then(response => {

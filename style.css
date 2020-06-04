@@ -14,7 +14,7 @@ contaner {
     
     /*background: linear-gradient(rgb(50, 150, 150), rgb(50, 60, 150));*/
     background-color: rgba(83, 88, 95, 0.6);
-    background-image: url('./assets/artphoto.jpg');
+    background-image: url('./assets/photo.jpg');
     background-size: cover;
     background-blend-mode: multiply; 
     font-family: sans-serif;
@@ -84,10 +84,4 @@ contaner {
 
 .degree-section h2 {
     font-size: 35px;
-}
-
-li {
-    background-color: rgba(83, 88, 95, 0.7);
-    background-image: url('../assets/artphoto.jpg');
-    background-blend-mode: multiply; 
 }
