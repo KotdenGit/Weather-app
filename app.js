@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
 
     function searchInput(event){
         event.preventDefault();
-        getLocationSearch(textSearch.value)
+        getLocationSearch(textSearch.value);
     }
 
     if (navigator.geolocation) {
@@ -61,6 +61,7 @@ window.addEventListener("load", () => {
     }
 
     function getLocationSearch(placename) {
+        
         const placeNameSearch = placename;
         const link = `https://api.opencagedata.com/geocode/v1/json?q=${placeNameSearch}&key=${geoKey}`;
         fetch (link)
@@ -77,15 +78,16 @@ window.addEventListener("load", () => {
                 return searchResult;
             })
             .then(searchResult => {
-                //console.log(searchResult);
                 displayMap(searchResult.place.lng, searchResult.place.lat);
                 getWeather(searchResult.place.lng, searchResult.place.lat);
                 locationTimezone.textContent = searchResult.formatted;
-                //changeTimeZone(timezone, lang = 'en-US');
+                changePicture();
+                changeTimeZone(searchResult.timezone, lang = 'en-US');
 
             })
             .catch(error => {
-                textSearch.value = `${error}Invalid request, try differently`;
+                textSearch.value = "";
+                inputText.placeholder = `Try it again. Invalid request. ${error}`;
             });
     }
     
@@ -131,7 +133,11 @@ window.addEventListener("load", () => {
             });
     }
    
-    chengeBackground.onclick = function chengePicture() {
+    chengeBackground.onclick = function turnChange () {
+        return changePicture();
+    }
+
+    function changePicture() {
         const api = `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=${accesKey}`;
         fetch(api)
             .then(response => {
