@@ -103,9 +103,9 @@ window.addEventListener("load", () => {
             .then(data => {
                 const { temp, feels_like, wind_speed } = data.current;
                 temperatureDegree.textContent = changeKelvin(temp);
-                temperatureDescription.textContent = ((data.current.weather)[0].description);
+                fellsLike = `, fells like ${changeKelvin(feels_like)}`;
+                temperatureDescription.textContent = ((data.current.weather)[0].description) + fellsLike;
                 windSpeed = wind_speed;
-                fellsLike = feels_like;
                 const icon = (data.current.weather)[0].icon;
                 setIcons(icon, document.querySelector(".icon"));
                 let daysTemperature = {temp: [], icon: []};
