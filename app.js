@@ -17,6 +17,7 @@ window.addEventListener("load", () => {
     const temperatureDescription = document.querySelector(".temperature-description");
     const temperatureDegree = document.querySelector(".temperature-degree");
     const locationTimezone = document.querySelector(".location-timezone");
+    const inputText = document.querySelector(".form-control");
     const longitudePoint = document.querySelector('.longitude');
     const latitudePoint = document.querySelector('.latitude');
     const chengeBackground = document.getElementById("getPic");
@@ -37,7 +38,6 @@ window.addEventListener("load", () => {
             getWeather(lon, lat);
         });
     } else {
-        let inputText = document.querySelector(".form-control");
         inputText.placeholder = "Browser does not support geolocation";
         displayMap(lon, lat);
         getWeather(lon, lat);
@@ -84,6 +84,9 @@ window.addEventListener("load", () => {
                 //changeTimeZone(timezone, lang = 'en-US');
 
             })
+            .catch(error => {
+                textSearch.value = `${error}Invalid request, try differently`;
+            });
     }
     
     function getWeather(longitude, latitude) {
