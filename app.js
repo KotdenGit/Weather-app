@@ -24,6 +24,7 @@ window.addEventListener("load", () => {
     const textSearch = document.getElementById("searchtext");
     const form = document.getElementById("searchform");
     form.addEventListener('submit', searchInput);
+    let timeNow;
 
     function searchInput(event){
         event.preventDefault();
@@ -61,7 +62,7 @@ window.addEventListener("load", () => {
     }
 
     function getLocationSearch(placename) {
-        
+        clearInterval(timeNow);
         const placeNameSearch = placename;
         const link = `https://api.opencagedata.com/geocode/v1/json?q=${placeNameSearch}&key=${geoKey}`;
         fetch (link)
@@ -189,8 +190,10 @@ window.addEventListener("load", () => {
             second: '2-digit',
             hour12: false,
         }
-        setInterval(() => {
+        //clearInterval(timeNow);
+        timeNow = setInterval(() => {
             document.querySelector('.time').innerHTML = new Date().toLocaleString(lang, options)
-        }, 1000)
+        }, 1000);
+        
     }
 });
