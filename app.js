@@ -93,6 +93,7 @@ window.addEventListener("load", () => {
     }
     
     function getWeather(longitude, latitude) {
+        changePicture();
         latitudePoint.textContent = ((Math.round(latitude*100)/100) + "′").replace('.', '°');  
         longitudePoint.textContent = ((Math.round(longitude*100)/100) + "′").replace('.', '°');
         const api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&APPID=${key}`;
@@ -146,13 +147,12 @@ window.addEventListener("load", () => {
                 return data;
             })
             .then(data => {
-                let backPicture = data.urls.full;
+                let backPicture = `url(${data.urls.full})`;
                 return backPicture;
             })
             .then(backPicture => {
                 const containerCanvase = document.getElementById("mean");
-                containerCanvase.style.backgroundImage = `url(${backPicture})`;
-                
+                containerCanvase.style.backgroundImage = backPicture;
             });
     }
 
@@ -190,10 +190,8 @@ window.addEventListener("load", () => {
             second: '2-digit',
             hour12: false,
         }
-        //clearInterval(timeNow);
         timeNow = setInterval(() => {
             document.querySelector('.time').innerHTML = new Date().toLocaleString(lang, options)
-        }, 1000);
-        
+        }, 1000); 
     }
 });
